@@ -1,0 +1,20 @@
+LOAD DATA INFILE "C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\dialogue.CSV" INTO TABLE dialogue
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES
+(dialogue_id,chapter_id,place_id,character_id,dialogue);
+
+
+set global local_infile=1;
+
+OPT_LOCAL_INFILE=1
+
+SHOW VARIABLES LIKE "secure_file_priv";
+
+CREATE TABLE dialogue (
+    dialogue_id INT,
+    chapter_id INT,
+    place_id INT,
+    character_id INT,
+    dialogue VARCHAR(2500)
+);
